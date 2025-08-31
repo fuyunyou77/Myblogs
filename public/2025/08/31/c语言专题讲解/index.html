@@ -20,28 +20,34 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="1. 指针的基础知识1.1 指针的基本语法与指针操作相关的运算符: 解引用运算符*, 取地址运算符&amp; 指针的基本使用方法 或者说 最基础的语法如下: 12345678910111213&#x2F;&#x2F;操作1int contianer &#x3D; 0;int content &#x3D; 1;contianer &#x3D; content;&#x2F;&#x2F;操作2int * contianer &#x3D; 0;int content &#x3D; 1;cont">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c语言专题讲解">
+<meta property="og:url" content="http://example.com/2025/08/31/c%E8%AF%AD%E8%A8%80%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 指针的基础知识1.1 指针的基本语法与指针操作相关的运算符: 解引用运算符*, 取地址运算符&amp; 指针的基本使用方法 或者说 最基础的语法如下: 12345678910111213&#x2F;&#x2F;操作1int contianer &#x3D; 0;int content &#x3D; 1;contianer &#x3D; content;&#x2F;&#x2F;操作2int * contianer &#x3D; 0;int content &#x3D; 1;cont">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fuyunyou-note.oss-cn-wuhan-lr.aliyuncs.com/typora-user-images/202502071351935.png">
+<meta property="article:published_time" content="2025-08-31T15:16:04.000Z">
+<meta property="article:modified_time" content="2025-08-31T15:16:28.274Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fuyunyou-note.oss-cn-wuhan-lr.aliyuncs.com/typora-user-images/202502071351935.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2025/08/31/c%E8%AF%AD%E8%A8%80%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>c语言专题讲解 | Hexo</title>
   
 
 
@@ -188,9 +194,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
@@ -206,10 +213,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/08/31/c%E8%AF%AD%E8%A8%80%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/" class="post-title-link" itemprop="url">c语言专题讲解</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          c语言专题讲解
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -233,7 +239,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-指针的基础知识"><a href="#1-指针的基础知识" class="headerlink" title="1. 指针的基础知识"></a>1. 指针的基础知识</h2><h3 id="1-1-指针的基本语法"><a href="#1-1-指针的基本语法" class="headerlink" title="1.1 指针的基本语法"></a>1.1 指针的基本语法</h3><p>与指针操作相关的运算符: 解引用运算符<code>*</code>, 取地址运算符<code>&amp;</code></p>
+        <h2 id="1-指针的基础知识"><a href="#1-指针的基础知识" class="headerlink" title="1. 指针的基础知识"></a>1. 指针的基础知识</h2><h3 id="1-1-指针的基本语法"><a href="#1-1-指针的基本语法" class="headerlink" title="1.1 指针的基本语法"></a>1.1 指针的基本语法</h3><p>与指针操作相关的运算符: 解引用运算符<code>*</code>, 取地址运算符<code>&amp;</code></p>
 <p>指针的基本使用方法 或者说 最基础的语法如下:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作1</span></span><br><span class="line"><span class="type">int</span> contianer = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> content = <span class="number">1</span>;</span><br><span class="line">contianer = content;</span><br><span class="line"></span><br><span class="line"><span class="comment">//操作2</span></span><br><span class="line"><span class="type">int</span> * contianer = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> content = <span class="number">1</span>;</span><br><span class="line">contianer = &amp;content;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;contianer:%d&quot;</span>,*contianer);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;contianer:%d&quot;</span>,contianer);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;contianer:%x&quot;</span>,contianer);</span><br></pre></td></tr></table></figure>
 <p>对比以上两种操作</p>
@@ -767,92 +773,30 @@
 <p>事实上, 对于任何拥有严格结构限制的数据, 禁用填充字节使用结构体接收, 是一种常见的应用. 如接收通讯协议数据, 接收特定文件格式. 同时也保证代码的可移植性,节省内存空间. 相应的劣势是访问结构体的时间会增加.</p>
 <h2 id="5-函数指针"><a href="#5-函数指针" class="headerlink" title="5. 函数指针"></a>5. 函数指针</h2><p>待续…</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/30/hello-world/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/08/30/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-08-30 22:33:10 / Modified: 22:31:55" itemprop="dateCreated datePublished" datetime="2025-08-30T22:33:10+08:00">2025-08-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2025/08/30/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -905,6 +849,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%8C%87%E9%92%88%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">1. 指针的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%8C%87%E9%92%88%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 指针的基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E6%8C%87%E9%92%88%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 指针的简单应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%8C%87%E9%92%88%E5%92%8C%E5%86%85%E5%AD%98%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">2. 指针和内存空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%8D%A0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 不同类型数据占据的存储空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E5%AF%BB%E5%9D%80%E7%A9%BA%E9%97%B4%E5%92%8C%E6%8C%87%E9%92%88%E5%A4%A7%E5%B0%8F"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 寻址空间和指针大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 数据的存储方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-%E9%97%AE%E9%A2%98%E7%9A%84%E5%BC%95%E5%85%A5"><span class="nav-number">2.3.1.</span> <span class="nav-text">2.3.1 问题的引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-%E5%AD%97%E8%8A%82%E5%BA%8F%E5%92%8C%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">2.3.2 字节序和存储模式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%8C%87%E9%92%88%E5%92%8C%E6%95%B0%E7%BB%84"><span class="nav-number">3.</span> <span class="nav-text">3. 指针和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 使用指针操作数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E9%92%88%E8%BF%90%E7%AE%97"><span class="nav-number">3.2.</span> <span class="nav-text">指针运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E6%95%B0%E7%BB%84%E5%88%B0%E6%8C%87%E9%92%88%E7%9A%84%E9%80%80%E5%8C%96"><span class="nav-number">3.3.</span> <span class="nav-text">3.2 数组到指针的退化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E7%BB%84%E5%88%B0%E6%8C%87%E9%92%88%E7%9A%84%E9%80%80%E5%8C%96%EF%BC%9F%E2%80%8B%E2%80%8B"><span class="nav-number">3.3.1.</span> <span class="nav-text">​1. 什么是数组到指针的退化？​​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B2-%E4%BD%95%E6%97%B6%E5%8F%91%E7%94%9F%E6%95%B0%E7%BB%84%E5%88%B0%E6%8C%87%E9%92%88%E7%9A%84%E9%80%80%E5%8C%96%EF%BC%9F%E2%80%8B%E2%80%8B"><span class="nav-number">3.3.2.</span> <span class="nav-text">​2. 何时发生数组到指针的退化？​​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B3-%E4%BD%95%E6%97%B6%E4%B8%8D%E4%BC%9A%E5%8F%91%E7%94%9F%E9%80%80%E5%8C%96%EF%BC%9F%E2%80%8B%E2%80%8B"><span class="nav-number">3.3.3.</span> <span class="nav-text">​3. 何时不会发生退化？​​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B4-%E9%80%80%E5%8C%96%E5%90%8E%E7%9A%84%E6%8C%87%E9%92%88%E7%B1%BB%E5%9E%8B%E2%80%8B"><span class="nav-number">3.3.4.</span> <span class="nav-text">​4. 退化后的指针类型​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B5-%E9%80%80%E5%8C%96%E4%B8%8E%E6%8C%87%E9%92%88%E7%AE%97%E6%9C%AF%E2%80%8B"><span class="nav-number">3.3.5.</span> <span class="nav-text">​5. 退化与指针算术​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B6-%E9%80%80%E5%8C%96%E4%B8%8E%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84%E2%80%8B"><span class="nav-number">3.3.6.</span> <span class="nav-text">​6. 退化与多维数组​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B7-%E9%80%80%E5%8C%96%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98%E2%80%8B"><span class="nav-number">3.3.7.</span> <span class="nav-text">​7. 退化带来的问题​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B8-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E9%80%80%E5%8C%96%EF%BC%9F%E2%80%8B%E2%80%8B"><span class="nav-number">3.3.8.</span> <span class="nav-text">​8. 如何避免退化？​​</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%8B9-%E6%80%BB%E7%BB%93%E2%80%8B"><span class="nav-number">3.3.9.</span> <span class="nav-text">​9. 总结​</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E5%9C%A8%E6%95%B0%E7%BB%84%E4%B8%AD%E4%BD%BF%E7%94%A8sizeof"><span class="nav-number">3.4.</span> <span class="nav-text">3.3 在数组中使用sizeof()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sizeof%E5%92%8Cstrlen%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.4.1.</span> <span class="nav-text">sizeof和strlen的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="nav-number">3.4.2.</span> <span class="nav-text">1. 定义与性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E4%B8%8E%E9%99%90%E5%88%B6"><span class="nav-number">3.4.3.</span> <span class="nav-text">2. 使用场景与限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E7%A4%BA%E4%BE%8B%E5%AF%B9%E6%AF%94"><span class="nav-number">3.4.4.</span> <span class="nav-text">3. 示例对比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8C%87%E9%92%88%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">4.</span> <span class="nav-text">4. 指针和结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E4%BD%BF%E7%94%A8%E6%8C%87%E9%92%88%E6%93%8D%E4%BD%9C%E7%BB%93%E6%9E%84%E4%BD%93"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 使用指针操作结构体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.1.</span> <span class="nav-text">1. 结构体的存储方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.2.</span> <span class="nav-text">2. 结构体的对齐方式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-%E5%AF%B9%E9%BD%90%E8%A7%84%E5%88%99"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">2.1 对齐规则</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E7%A4%BA%E4%BE%8B%E5%88%86%E6%9E%90"><span class="nav-number">4.2.3.</span> <span class="nav-text">3. 示例分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%AF%B9%E9%BD%90"><span class="nav-number">4.2.3.1.</span> <span class="nav-text">3.1 成员变量对齐</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B4%E4%BD%93%E5%AF%B9%E9%BD%90"><span class="nav-number">4.2.3.2.</span> <span class="nav-text">3.2 结构体整体对齐</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E4%BF%AE%E6%94%B9%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F"><span class="nav-number">4.2.4.</span> <span class="nav-text">4. 修改对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E5%AF%B9%E9%BD%90%E6%96%B9%E5%BC%8F%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">4.2.5.</span> <span class="nav-text">5. 对齐方式的意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-%E6%80%BB%E7%BB%93"><span class="nav-number">4.2.6.</span> <span class="nav-text">6. 总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E6%95%B0%E7%BB%84%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 数组和结构体相互转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%87%BD%E6%95%B0%E6%8C%87%E9%92%88"><span class="nav-number">5.</span> <span class="nav-text">5. 函数指针</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
