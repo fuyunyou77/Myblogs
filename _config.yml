@@ -101,7 +101,10 @@ theme: next
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/fuyunyou77/Myblogs
+  branch: main # 或 gh-pages，通常是部署到的分支
+  message: "Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}" # 可选，提交信息
 
 # Sitemap config
 sitemap:
