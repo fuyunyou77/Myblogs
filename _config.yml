@@ -102,3 +102,14 @@ theme: next
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+# Sitemap config
+sitemap:
+  path: sitemap.xml
+
+
+search:
+  path: search.json
+  field: post
+  content: true
+  format: striptags
