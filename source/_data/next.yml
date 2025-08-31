@@ -1,0 +1,46 @@
+# 站点信息自定义
+# favicon:
+#   small: /images/your-favicon-16x16.png
+#   medium: /images/your-favicon-32x32.png
+
+# 菜单配置
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+
+# 代码块设置
+codeblock:
+  copy_button:
+    enable: true
+    show_result: true
+
+# 搜索功能
+local_search:
+  enable: true
+
+# 范围顶部按钮
+back2top:
+  enable: true
+  scrollpercent: true
+
+# 阅读进度条
+reading_progress:
+  enable: true
+  position: top
+  color: "#37c6c0"
+
+# 优化字体显示
+font:
+  enable: true
+  global:
+    external: true
+    family: "Noto Sans SC"
+
+# 优化Pjax
+pjax: true
+
+# 优化图片加载
+lazyload: true
