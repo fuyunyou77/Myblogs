@@ -44,3 +44,16 @@ pjax: true
 
 # 优化图片加载
 lazyload: true
+
+# 文章摘要显示相关的配置
+post_excerpt:
+  # 摘要长度（字符数）。如果文章中没有插入 <!-- more --> 标签，则按此长度自动截取
+  length: 150
+  # 是否在首页隐藏整篇文章（即使没有 more 标签也不显示）
+  hide: true
+
+# 启用TOC目录
+toc:
+  enable: true
+  number: true
+  depth: 4

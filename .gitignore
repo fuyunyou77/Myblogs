@@ -1,3 +1,11 @@
 node_modules/
 public/
 .deploy_git/
+.obsidian/
+模板/
+.DS_Store
+Thumbs.db
+
+# 忽略主题中的.git
+!themes/next/
+themes/next/.git
