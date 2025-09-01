@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -17,20 +17,22 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","Pisces | Gemini":240,"width":300,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="1. 指针的基础知识1.1 指针的基本语法与指针操作相关的运算符: 解引用运算符*, 取地址运算符&amp; 指针的基本使用方法 或者说 最基础的语法如下: 12345678910111213&#x2F;&#x2F;操作1int contianer &#x3D; 0;int content &#x3D; 1;contianer &#x3D; content;&#x2F;&#x2F;操作2int * contianer &#x3D; 0;int content &#x3D; 1;cont">
+  <meta name="description" content="讲解c语言指针的进阶内容，包括指针与数组、指针与结构体等……">
 <meta property="og:type" content="article">
 <meta property="og:title" content="c语言专题讲解">
 <meta property="og:url" content="http://example.com/2025/08/31/c%E8%AF%AD%E8%A8%80%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 指针的基础知识1.1 指针的基本语法与指针操作相关的运算符: 解引用运算符*, 取地址运算符&amp; 指针的基本使用方法 或者说 最基础的语法如下: 12345678910111213&#x2F;&#x2F;操作1int contianer &#x3D; 0;int content &#x3D; 1;contianer &#x3D; content;&#x2F;&#x2F;操作2int * contianer &#x3D; 0;int content &#x3D; 1;cont">
-<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="FUYUNYOU&#39;S BLOG">
+<meta property="og:description" content="讲解c语言指针的进阶内容，包括指针与数组、指针与结构体等……">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://fuyunyou-note.oss-cn-wuhan-lr.aliyuncs.com/typora-user-images/202502071351935.png">
 <meta property="article:published_time" content="2025-08-31T15:16:04.000Z">
-<meta property="article:modified_time" content="2025-08-31T15:16:28.274Z">
-<meta property="article:author" content="John Doe">
+<meta property="article:modified_time" content="2025-09-01T14:52:04.900Z">
+<meta property="article:author" content="fuyunyou">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="指针">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://fuyunyou-note.oss-cn-wuhan-lr.aliyuncs.com/typora-user-images/202502071351935.png">
 
@@ -43,11 +45,11 @@
     sidebar: "",
     isHome : false,
     isPost : true,
-    lang   : 'en'
+    lang   : 'zh-CN'
   };
 </script>
 
-  <title>c语言专题讲解 | Hexo</title>
+  <title>c语言专题讲解 | FUYUNYOU'S BLOG</title>
   
 
 
@@ -87,7 +89,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
+    <div class="toggle" aria-label="切换导航栏">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -98,9 +100,10 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">FUYUNYOU'S BLOG</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">fuyunyou for you ^_^</p>
   </div>
 
   <div class="site-nav-right">
@@ -117,38 +120,49 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
         <li class="menu-item menu-item-schedule">
 
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar 日程 fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat 公益 fa-fw"></i>公益 404</a>
 
   </li>
       <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
       </li>
+    
+    <li class="menu-item">
+      <a class="menu-item-link theme-switch" title="切换主题">
+        <i class="fa fa-moon-o"></i>
+      </a>
+    </li>
   </ul>
 </nav>
 
@@ -162,7 +176,7 @@
   </span>
   <div class="search-input-container">
     <input autocomplete="off" autocapitalize="off"
-           placeholder="Searching..." spellcheck="false"
+           placeholder="搜索..." spellcheck="false"
            type="search" class="search-input">
   </div>
   <span class="popup-btn-close">
@@ -200,17 +214,17 @@
     
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2025/08/31/c%E8%AF%AD%E8%A8%80%E4%B8%93%E9%A2%98%E8%AE%B2%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="fuyunyou">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="FUYUNYOU'S BLOG">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -222,10 +236,29 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
+              <span class="post-meta-item-text">发表于</span>
 
-              <time title="Created: 2025-08-31 23:16:04 / Modified: 23:16:28" itemprop="dateCreated datePublished" datetime="2025-08-31T23:16:04+08:00">2025-08-31</time>
+              <time title="创建时间：2025-08-31 23:16:04" itemprop="dateCreated datePublished" datetime="2025-08-31T23:16:04+08:00">2025-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-09-01 22:52:04" itemprop="dateModified" datetime="2025-09-01T22:52:04+08:00">2025-09-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/c-c/" itemprop="url" rel="index"><span itemprop="name">c/c++</span></a>
+                </span>
             </span>
 
           
@@ -240,8 +273,9 @@
 
       
         <h2 id="1-指针的基础知识"><a href="#1-指针的基础知识" class="headerlink" title="1. 指针的基础知识"></a>1. 指针的基础知识</h2><h3 id="1-1-指针的基本语法"><a href="#1-1-指针的基本语法" class="headerlink" title="1.1 指针的基本语法"></a>1.1 指针的基本语法</h3><p>与指针操作相关的运算符: 解引用运算符<code>*</code>, 取地址运算符<code>&amp;</code></p>
-<p>指针的基本使用方法 或者说 最基础的语法如下:</p>
+<p>指针最基础的语法如下:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//操作1</span></span><br><span class="line"><span class="type">int</span> contianer = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> content = <span class="number">1</span>;</span><br><span class="line">contianer = content;</span><br><span class="line"></span><br><span class="line"><span class="comment">//操作2</span></span><br><span class="line"><span class="type">int</span> * contianer = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> content = <span class="number">1</span>;</span><br><span class="line">contianer = &amp;content;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;contianer:%d&quot;</span>,*contianer);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;contianer:%d&quot;</span>,contianer);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;contianer:%x&quot;</span>,contianer);</span><br></pre></td></tr></table></figure>
+
 <p>对比以上两种操作</p>
 <p>指针用于存储地址, 通过地址可以找寻到该地址处的数据, 或者以该地址为起始地址的数据.</p>
 <h3 id="1-2-指针的简单应用"><a href="#1-2-指针的简单应用" class="headerlink" title="1.2 指针的简单应用"></a>1.2 指针的简单应用</h3><p>如何实现交换两个数的内容:</p>
@@ -250,6 +284,7 @@
 <p>以上是基本的交换两个数的实现, 这样写完全没问题. 如果我有10000个这样的数需要交换, 不可能写一万遍代码吧? 很自然的想到, 使用函数, 把重复使用的代码提取成一个函数.</p>
 <p>那么如何写呢?</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">char</span> a, <span class="type">char</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> temp=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="comment">//使用一下三步完成交换</span></span><br><span class="line">	temp = a;<span class="comment">//篮球放在空盒子里, 原本放篮球的盒子现在为空</span></span><br><span class="line">	a = b;<span class="comment">//足球放在空盒子里, 此时原本放足球的盒子是空 注意不是b = a;</span></span><br><span class="line">	b = temp; <span class="comment">//空盒子中放入篮球, 完成物体的交换</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>好了这个函数实现了</p>
 <p>接下来在主函数调用一下:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">char</span> a, <span class="type">char</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> temp=<span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="comment">//使用一下三步完成交换</span></span><br><span class="line">	temp = a;<span class="comment">//篮球放在空盒子里, 原本放篮球的盒子现在为空</span></span><br><span class="line">	a = b;<span class="comment">//足球放在空盒子里, 此时原本放足球的盒子是空 注意不是b = a;</span></span><br><span class="line">	b = temp; <span class="comment">//空盒子中放入篮球, 完成物体的交换</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">char</span> a=<span class="string">&#x27;B&#x27;</span>;<span class="comment">//一个盒子里放着篮球</span></span><br><span class="line">	<span class="type">char</span> b=<span class="string">&#x27;A&#x27;</span>;<span class="comment">//另一个盒子里放着足球</span></span><br><span class="line">	<span class="type">char</span> temp=<span class="string">&#x27;0&#x27;</span>;<span class="comment">//有一个空盒子</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//使用一下三步完成交换</span></span><br><span class="line">	swap(a,b);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//把盒子里的球倒出来看看</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;box a:%c box b:%c\n&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -279,6 +314,7 @@
 <p>照这样来看数组应该根据存储数据类型的不同, 拥有不同的大小, 然而事实却不是这样. 一般来说, 指针拥有固定的大小.<br>原因也很简单, 指针存储的是地址, 所有的地址都是同一类型的数据, 不论是char还是int, 都是地址. 所以占据的大小都是相同的.</p>
 <p>那么可以说所有的指针都是同一类型的数据吗?<br>当然不能.<br>虽然指针本身所占的空间大小相同, 但其中包含的地址所指向的数据本身却是不同的.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> * char_ptr;</span><br><span class="line"><span class="type">short</span> * short_ptr;</span><br><span class="line"><span class="type">int</span> * int_ptr;</span><br></pre></td></tr></table></figure>
+
 <p>以上的数据声明中, 有<code>char *, short *, int *</code> 三种不同类型的数据, 可以这样理解, 其中的<code>*</code>(解引用运算符)表示这三者都是指针, 而char, short, int表示其中存储的数据的不同类型. 这两个方面的信息共同构成了指针的类型.<br>当计算机根据指针中存储的地址找到所在位置之后, 通过声明指针变量是给出char, int或其他数据类型的信息决定取一个字节或四个字节的数据.</p>
 <blockquote>
 <p>[!info] <code>void</code> 类型 和<code>void*</code> 类型<br><code>void</code> 表示无类型，不能直接用来定义变量，如<code>void x=0;</code>这条语句是不合法的。用在函数头的返回值或参数列表中，表示函数无参或无返回值。如<code>void func(void)</code>，表示一个既无参数有无返回值的函数。<br> <code>void*</code>表示无类型指针，可以用来定义变量，<code>void* ptr=&amp;x;</code>该语句是合法的。<code>void*</code>是为了满足一些函数的适配性而设计的（即泛型编程），例如，设计一个函数<code>long sumof(int a,int b)</code>用于计算两个数之和，因为不能确定要计算的两个数的大小，如果给出的参数超出了<code>int</code>类型的限制就会产生意想不到的结果。将其修改为<code>void* sumof(void* a,void* b,DATA_TYPE type)</code>，不论数据有多大，先接受了再说，同时传入数据类型，根据数据类型，在函数中采用不同的处理方式即可。</p>
@@ -286,7 +322,6 @@
 </blockquote>
 <h3 id="2-2-寻址空间和指针大小"><a href="#2-2-寻址空间和指针大小" class="headerlink" title="2.2 寻址空间和指针大小"></a>2.2 寻址空间和指针大小</h3><p>我们知道指针的大小一般都是相同的，那么会是多大呢？可以使用<code>sizeof()</code>运算符测算</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="type">char</span> b=<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"><span class="type">float</span> c=<span class="number">1.1</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> *ptr1=&amp;a;</span><br><span class="line"><span class="type">char</span> *ptr2=&amp;b;</span><br><span class="line"><span class="type">float</span> *ptr3=&amp;c;</span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;size of ptr1 = %d\n&quot;</span>,<span class="keyword">sizeof</span>(ptr1));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;size of ptr2 = %d\n&quot;</span>,<span class="keyword">sizeof</span>(ptr2));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;size of ptr3 = %d\n&quot;</span>, <span class="keyword">sizeof</span>(ptr3));</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出</span></span><br><span class="line">size of ptr1 = <span class="number">8</span></span><br><span class="line">size of ptr2 = <span class="number">8</span></span><br><span class="line">size of ptr3 = <span class="number">8</span></span><br></pre></td></tr></table></figure>
-
 
 <p>大部分情况下, 结果都会是8. 这表示指针类型占据8字节空间大小.</p>
 <p>指针占据的空间是由CPU的寻址位数所决定的,  CPU的寻址位数决定了其能够访问的内存地址的范围，也决定了指针变量能够存储的地址值的位数。例如，在32位机器上，地址是由32个0或1的二进制序列组成，因此指针大小通常是4个字节（因为1个字节&#x3D;8比特位，32比特位&#x3D;4个字节）。而在64位机器上，地址需要64个0或1的二进制序列组成，因此指针大小通常是8个字节。</p>
@@ -298,6 +333,7 @@
 <p>因此，当软件的release版本后缀带有x86或x64时，这表示该软件分别针对32位或64位的处理器架构进行了优化。用户应该根据自己的操作系统和硬件平台选择合适的版本进行安装。如果你的操作系统是64位的，并且你的计算机硬件支持x64架构，那么建议选择x64版本的软件以获得更好的性能和兼容性。如果你的操作系统或硬件平台是32位的，或者你需要运行一些只能在32位环境下运行的旧版软件，那么你可能需要选择x86版本的软件。</p>
 <p>&#x3D;&#x3D;(推书) 汇编语言–王爽&#x3D;&#x3D;</p>
 <h3 id="2-3-数据的存储方式"><a href="#2-3-数据的存储方式" class="headerlink" title="2.3 数据的存储方式"></a>2.3 数据的存储方式</h3><h4 id="2-3-1-问题的引入"><a href="#2-3-1-问题的引入" class="headerlink" title="2.3.1 问题的引入"></a>2.3.1 问题的引入</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> int_data=<span class="number">0x12345678</span>;</span><br><span class="line"><span class="type">char</span> * char_ptr=<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">char_ptr = (<span class="type">char</span> *)(&amp;int_data);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;0x%x&quot;</span>,*char_ptr);</span><br></pre></td></tr></table></figure>
+
 <p>以上示例输出内容是什么?</p>
 <p>在不同的平台上,  输出内容会有差别, 大部分人在PC上应该输出的是0x78, 而在一些特定平台, 则会输出0x12.</p>
 <p>原因是什么?</p>
@@ -347,6 +383,7 @@
 <p>然而还有另一种用法, 数组名是一个相应类型的指针.</p>
 <p>以上例子中, <code>a</code>可以直接赋值给<code>int *</code>类型的指针使用，且是一个合法地址。该地址是数组第一个元素的地址。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> * int_ptr=a;</span><br></pre></td></tr></table></figure>
+
 <p>以上写法, 编译既不会报错, 也不会警告. 是合法合规而且经常使用的写法.</p>
 <p>于是, 对于数组的元素的访问, 可以有两种不同的方式完成.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">10</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>&#125;;</span><br><span class="line"><span class="type">int</span> data1=a[<span class="number">0</span>];<span class="comment">//访问第一个数组元素</span></span><br><span class="line"><span class="type">int</span> data2=*(a+<span class="number">1</span>);<span class="comment">//访问第一个数组元素之后的一个元素</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;data1:%d&quot;</span>,data1);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;data2:%d&quot;</span>,data2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//输出:</span></span><br><span class="line">data1:<span class="number">1</span></span><br><span class="line">data2:<span class="number">2</span></span><br></pre></td></tr></table></figure>
@@ -780,17 +817,22 @@
     
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><i class="fa fa-tag"></i> C语言</a>
+              <a href="/tags/%E6%8C%87%E9%92%88/" rel="tag"><i class="fa fa-tag"></i> 指针</a>
+          </div>
 
         
 
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2025/08/30/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
-    </a></div>
       <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2025/08/31/%E5%8D%95%E7%89%87%E6%9C%BA%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B/" rel="next" title="单片机启动流程介绍">
+      单片机启动流程介绍 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -840,10 +882,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          Table of Contents
+          文章目录
         </li>
         <li class="sidebar-nav-overview">
-          Overview
+          站点概览
         </li>
       </ul>
 
@@ -855,7 +897,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">John Doe</p>
+  <p class="site-author-name" itemprop="name">fuyunyou</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
@@ -863,9 +905,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">posts</span>
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
@@ -895,9 +949,9 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">fuyunyou</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
@@ -925,7 +979,7 @@
 <script src="/js/motion.js"></script>
 
 
-<script src="/js/schemes/muse.js"></script>
+<script src="/js/schemes/pisces.js"></script>
 
 
 <script src="/js/next-boot.js"></script>
@@ -1010,6 +1064,19 @@ window.addEventListener('pjax:success', () => {
 
 
 
+<script data-pjax>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script>
 
 
     <div id="pjax">
