@@ -29,12 +29,7 @@
         </a>
       </li>
     {%- endif %}
-    {# 暗黑模式切换按钮 #}
-    <li class="menu-item">
-      <a class="menu-item-link theme-switch" title="切换主题">
-        <i class="fa fa-moon-o"></i>
-      </a>
-    </li>
+
   </ul>
 {%- endif %}
 </nav>
