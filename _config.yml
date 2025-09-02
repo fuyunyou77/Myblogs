@@ -113,7 +113,6 @@ deploy:
 sitemap:
   path: sitemap.xml
 
-
 search:
   path: search.json
   field: post
