@@ -22,17 +22,16 @@ minify: true
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
 custom_file_path:
-  #head: source/_data/head.swig
-  #header: source/_data/header.swig
-  #sidebar: source/_data/sidebar.swig
-  #postMeta: source/_data/post-meta.swig
-  #postBodyEnd: source/_data/post-body-end.swig
-  #footer: source/_data/footer.swig
-  #bodyEnd: source/_data/body-end.swig
-  #variable: source/_data/variables.styl
-  #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
-
+  head: source/_data/head.swig
+  # header: source/_data/header.swig
+  # sidebar: source/_data/sidebar.swig
+  # postMeta: source/_data/post-meta.swig
+  # postBodyEnd: source/_data/post-body-end.swig
+  # footer: source/_data/footer.swig
+  # bodyEnd: source/_data/body-end.swig
+  # variable: source/_data/variables.styl
+  # mixin: source/_data/mixins.styl
+  # style: source/_data/styles.styl
 
 # ---------------------------------------------------------------
 # Site Information Settings
@@ -511,9 +510,9 @@ math:
 
   # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin) required for full Katex support.
   katex:
-    enable: false
+    enable: true
     # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-    copy_tex: false
+    copy_tex: true
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
@@ -1001,10 +1000,22 @@ css: css
 js: js
 images: images
 
-
+# ---------------------------------------------------------------
+# Priavte Add Settings
+# ---------------------------------------------------------------
 # 文章摘要显示相关的配置
 post_excerpt:
   # 摘要长度（字符数）。如果文章中没有插入 <!-- more --> 标签，则按此长度自动截取
   length: 150
   # 是否在首页隐藏整篇文章（即使没有 more 标签也不显示）
   hide: true
+
+# markdown_it_plus 语法渲染插件选项,支持obsidian特有的语法
+markdown_it_plus:
+    plugins:
+        # Obsidian Callouts
+        - plugin:
+            name: mdit-plugin-callouts
+            enable: true
+            options:
+                # this is plugin option
