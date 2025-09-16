@@ -14,7 +14,7 @@
   "dependencies": {
     "@traptitech/markdown-it-katex": "^3.6.0",
     "core-js": "^3.45.1",
-    "hexo": "^7.0.0",
+    "hexo": "^8.0.0",
     "hexo-deployer-git": "^4.0.0",
     "hexo-filter-titlebased-link": "^0.2.6",
     "hexo-generator-archive": "^2.0.0",
